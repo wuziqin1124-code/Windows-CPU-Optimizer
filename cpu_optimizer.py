@@ -377,7 +377,7 @@ class Window(QWidget):
         layout.addWidget(title)
 
         self.process_table = QTableWidget()
-        self.process_table.setMinimumHeight(250)
+        self.process_table.setMinimumHeight(320)
         self.process_table.setColumnCount(3)
         self.process_table.setHorizontalHeaderLabels(["进程名", "PID", "CPU %"])
         self.process_table.horizontalHeader().setSectionResizeMode(0, QHeaderView.Stretch)
