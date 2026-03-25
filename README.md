@@ -28,7 +28,7 @@ python cpu_optimizer.py
 - **优先级调整** - 提高前台进程优先级，降低其他进程
 - **CPU 亲和性** - 可选绑定 CPU 核心
 - **实时显示** - 显示前台进程名、CPU 占用率
-- **进程列表** - Top 8 高 CPU 占用进程
+- **进程列表** - Top 6 高 CPU 占用进程
 - **系统托盘** - 最小化到托盘，后台运行
 
 ## 三种优化模式
@@ -38,6 +38,15 @@ python cpu_optimizer.py
 | 平衡模式 | HIGH | NORMAL | 无 |
 | 激进模式 | HIGH | LOW | 无 |
 | 绑核模式 | HIGH + 前半核 | LOW | 有 |
+
+## 打包exe
+
+```bash
+pip install pyinstaller
+pyinstaller --onefile --icon=6.ico --noconsole cpu_optimizer.py
+```
+
+打包完成后，exe 文件在 `dist/` 目录下。
 
 ## 注意事项
 
