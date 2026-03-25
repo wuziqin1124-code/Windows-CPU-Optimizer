@@ -410,6 +410,8 @@ class Window(QWidget):
         self.process_table.setAlternatingRowColors(True)
         self.process_table.setEditTriggers(QTableWidget.NoEditTriggers)
         self.process_table.setSelectionBehavior(QTableWidget.SelectRows)
+        self.process_table.verticalHeader().setDefaultSectionSize(32)
+        self.process_table.verticalHeader().setVisible(False)
         layout.addWidget(self.process_table)
 
         frame.setLayout(layout)
