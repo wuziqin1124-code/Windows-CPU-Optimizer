@@ -159,7 +159,7 @@ class Optimizer(threading.Thread):
             except:
                 continue
 
-        procs = sorted(procs, key=lambda x: x[1], reverse=True)[:8]
+        procs = sorted(procs, key=lambda x: x[1], reverse=True)[:6]
         self.window.process_update_signal.emit(procs)
 
 
@@ -404,6 +404,7 @@ class Window(QWidget):
                 border: none;
                 font-weight: bold;
                 font-size: 12px;
+                min-height: 60px;
             }
             QTableWidget::item:selected {
                 background-color: #3498db;
