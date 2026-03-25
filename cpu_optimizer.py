@@ -179,8 +179,8 @@ class Window(QWidget):
             )
 
         self.setWindowTitle("CPU Optimizer Pro")
-        self.resize(560, 520)
-        self.setMinimumSize(520, 480)
+        self.resize(700, 600)
+        self.setMinimumSize(560, 520)
         self.setStyleSheet("""
             QWidget {
                 background-color: #f0f0f0;
