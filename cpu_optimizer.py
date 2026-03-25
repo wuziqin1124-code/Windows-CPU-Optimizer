@@ -179,7 +179,8 @@ class Window(QWidget):
             )
 
         self.setWindowTitle("CPU Optimizer Pro")
-        self.setFixedSize(520, 480)
+        self.resize(560, 520)
+        self.setMinimumSize(520, 480)
         self.setStyleSheet("""
             QWidget {
                 background-color: #f0f0f0;
@@ -226,6 +227,7 @@ class Window(QWidget):
 
     def create_status_group(self):
         frame = QFrame()
+        frame.setMinimumHeight(160)
         frame.setStyleSheet("""
             QFrame {
                 background-color: white;
@@ -236,7 +238,7 @@ class Window(QWidget):
         """)
 
         layout = QVBoxLayout()
-        layout.setSpacing(10)
+        layout.setSpacing(15)
 
         self.status_label = QLabel("未启动")
         self.status_label.setFont(QFont("Segoe UI", 14, QFont.Bold))
@@ -293,6 +295,7 @@ class Window(QWidget):
 
     def create_control_group(self):
         frame = QFrame()
+        frame.setMinimumHeight(70)
         frame.setStyleSheet("""
             QFrame {
                 background-color: white;
@@ -374,6 +377,7 @@ class Window(QWidget):
         layout.addWidget(title)
 
         self.process_table = QTableWidget()
+        self.process_table.setMinimumHeight(180)
         self.process_table.setColumnCount(3)
         self.process_table.setHorizontalHeaderLabels(["进程名", "PID", "CPU %"])
         self.process_table.horizontalHeader().setSectionResizeMode(0, QHeaderView.Stretch)
