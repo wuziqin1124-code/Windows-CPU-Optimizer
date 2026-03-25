@@ -498,7 +498,7 @@ class Window(QWidget):
 
     def init_tray(self):
         self.tray = QSystemTrayIcon(self)
-        icon = self.style().standardIcon(QStyle.SP_ComputerIcon)
+        icon = QIcon("6.ico")
         self.tray.setIcon(icon)
 
         menu = QMenu()
