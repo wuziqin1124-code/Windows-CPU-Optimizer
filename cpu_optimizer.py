@@ -377,7 +377,7 @@ class Window(QWidget):
         layout.addWidget(title)
 
         self.process_table = QTableWidget()
-        self.process_table.setMinimumHeight(180)
+        self.process_table.setMinimumHeight(250)
         self.process_table.setColumnCount(3)
         self.process_table.setHorizontalHeaderLabels(["进程名", "PID", "CPU %"])
         self.process_table.horizontalHeader().setSectionResizeMode(0, QHeaderView.Stretch)
@@ -386,6 +386,8 @@ class Window(QWidget):
         self.process_table.setColumnWidth(1, 80)
         self.process_table.setColumnWidth(2, 80)
         self.process_table.setFont(QFont("Segoe UI", 10))
+        self.process_table.verticalHeader().setDefaultSectionSize(35)
+        self.process_table.verticalHeader().setVisible(False)
         self.process_table.setStyleSheet("""
             QTableWidget {
                 border: 1px solid #ddd;
@@ -398,9 +400,10 @@ class Window(QWidget):
             QHeaderView::section {
                 background-color: #34495e;
                 color: white;
-                padding: 8px;
+                padding: 10px;
                 border: none;
                 font-weight: bold;
+                font-size: 12px;
             }
             QTableWidget::item:selected {
                 background-color: #3498db;
@@ -410,8 +413,6 @@ class Window(QWidget):
         self.process_table.setAlternatingRowColors(True)
         self.process_table.setEditTriggers(QTableWidget.NoEditTriggers)
         self.process_table.setSelectionBehavior(QTableWidget.SelectRows)
-        self.process_table.verticalHeader().setDefaultSectionSize(32)
-        self.process_table.verticalHeader().setVisible(False)
         layout.addWidget(self.process_table)
 
         frame.setLayout(layout)
